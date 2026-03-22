@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0f0f23;
+  --foreground: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+/* Mystical glassmorphism utility classes */
+@layer components {
+  .glass-card {
+    @apply bg-mystical-glass-white backdrop-blur-glass border border-white/20 rounded-2xl shadow-glass;
+  }
+
+  .mystical-button {
+    @apply bg-gradient-to-r from-primary-purple to-primary-deep-purple text-white font-medium px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-glow hover:scale-105;
+  }
+
+  .glow-effect {
+    @apply shadow-glow animate-glow;
+  }
+
+  .mystical-gradient {
+    @apply bg-gradient-to-br from-primary-purple via-primary-deep-purple to-mystical-black;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+}
