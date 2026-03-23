@@ -230,7 +230,7 @@ export default function ServicesPage() {
                       </CardTitle>
                       <div className="flex items-center gap-4 mt-2">
                         <span className="font-handwritten text-xl text-accent-gold">
-                          {service.price}
+                          Contact for Pricing
                         </span>
                         <span className="font-serif text-white/60 text-sm">
                           {service.duration}
