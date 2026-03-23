@@ -37,9 +37,11 @@ export async function POST(request: NextRequest) {
         to_email,
         from_name,
         from_email,
-        phone,
-        reading_type,
-        preferred_datetime,
+        phone: phone || 'Not provided',
+        reading_type: body.reading_type || 'N/A',
+        preferred_datetime: body.preferred_datetime || 'N/A',
+        subject: body.subject || 'N/A',
+        form_type: body.form_type || 'Booking Form',
         message,
         reply_to: from_email
       }

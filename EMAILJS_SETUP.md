@@ -17,17 +17,17 @@
 2. Click "Create New Template"
 3. Use this template:
 
-**Subject:** New Booking Request - Mystic Tarot & Gems
+**Subject:** New Contact Form Message - Mystic Tarot & Gems
 
 **Content:**
 ```
-🔮 NEW BOOKING REQUEST
+📧 NEW CONTACT FORM MESSAGE
 
 👤 Name: {{from_name}}
 📧 Email: {{from_email}}
 📱 Phone: {{phone}}
-🎯 Service: {{reading_type}}
-📅 Preferred Date/Time: {{preferred_datetime}}
+📋 Subject: {{subject}}
+📝 Form Type: {{form_type}}
 
 💬 Message:
 {{message}}
