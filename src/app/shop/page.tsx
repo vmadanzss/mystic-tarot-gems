@@ -3,175 +3,33 @@
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
-
-const remedies = [
-  // Magic Oils - Fixed Price ₹500
-  {
-    id: 1,
-    name: 'Love Attraction Oil',
-    price: '₹500',
-    category: 'Magic Oils',
-    description:
-      'Enchanted oil blend to attract love and enhance romantic connections',
-    image: '/api/placeholder/300/300',
-    properties: ['Love', 'Attraction', 'Romance'],
-    isFixed: true,
-  },
-  {
-    id: 2,
-    name: 'Prosperity Oil',
-    price: '₹500',
-    category: 'Magic Oils',
-    description: 'Sacred oil for manifesting abundance and financial success',
-    image: '/api/placeholder/300/300',
-    properties: ['Wealth', 'Success', 'Abundance'],
-    isFixed: true,
-  },
-  {
-    id: 3,
-    name: 'Protection Oil',
-    price: '₹500',
-    category: 'Magic Oils',
-    description: 'Powerful protective oil for spiritual shielding and safety',
-    image: '/api/placeholder/300/300',
-    properties: ['Protection', 'Safety', 'Cleansing'],
-    isFixed: true,
-  },
-
-  // Gems - Contact for Pricing
-  {
-    id: 4,
-    name: 'Rose Quartz',
-    price: 'Contact for Price',
-    category: 'Gems',
-    description: 'The stone of unconditional love and infinite peace',
-    image: '/api/placeholder/300/300',
-    properties: ['Love', 'Healing', 'Self-Love'],
-  },
-  {
-    id: 5,
-    name: 'Citrine',
-    price: 'Contact for Price',
-    category: 'Gems',
-    description: 'The merchant stone for abundance and prosperity',
-    image: '/api/placeholder/300/300',
-    properties: ['Abundance', 'Success', 'Confidence'],
-  },
-  {
-    id: 6,
-    name: 'Emerald',
-    price: 'Contact for Price',
-    category: 'Gems',
-    description: 'Stone of wisdom, growth, and patience',
-    image: '/api/placeholder/300/300',
-    properties: ['Wisdom', 'Growth', 'Patience'],
-  },
-
-  // Crystals - Contact for Pricing
-  {
-    id: 7,
-    name: 'Amethyst Crystal',
-    price: 'Contact for Price',
-    category: 'Crystals',
-    description: 'A natural tranquilizer and protective stone',
-    image: '/api/placeholder/300/300',
-    properties: ['Protection', 'Clarity', 'Intuition'],
-  },
-  {
-    id: 8,
-    name: 'Clear Quartz Point',
-    price: 'Contact for Price',
-    category: 'Crystals',
-    description: 'The master healer and energy amplifier',
-    image: '/api/placeholder/300/300',
-    properties: ['Healing', 'Amplification', 'Clarity'],
-  },
-  {
-    id: 9,
-    name: 'Black Tourmaline',
-    price: 'Contact for Price',
-    category: 'Crystals',
-    description: 'Powerful protection against negative energy',
-    image: '/api/placeholder/300/300',
-    properties: ['Protection', 'Grounding', 'Cleansing'],
-  },
-
-  // Pure Rudraksha - Contact for Pricing
-  {
-    id: 10,
-    name: 'Pure Rudraksha Mala (108 Beads)',
-    price: 'Contact for Price',
-    category: 'Pure Rudraksha',
-    description:
-      'Authentic Rudraksha mala for meditation and spiritual growth',
-    image: '/api/placeholder/300/300',
-    properties: ['Meditation', 'Spiritual Growth', 'Peace'],
-  },
-  {
-    id: 11,
-    name: 'Gauri Shankar Rudraksha',
-    price: 'Contact for Price',
-    category: 'Pure Rudraksha',
-    description: 'Rare twin Rudraksha for harmony and relationships',
-    image: '/api/placeholder/300/300',
-    properties: ['Harmony', 'Relationships', 'Unity'],
-  },
-  {
-    id: 12,
-    name: '5 Mukhi Rudraksha',
-    price: 'Contact for Price',
-    category: 'Pure Rudraksha',
-    description: 'Most common and powerful Rudraksha for overall well-being',
-    image: '/api/placeholder/300/300',
-    properties: ['Well-being', 'Health', 'Peace'],
-  },
-
-  // All Spiritual Items - Contact for Pricing
-  {
-    id: 13,
-    name: 'Sacred Incense Set',
-    price: 'Contact for Price',
-    category: 'All Spiritual Items',
-    description: 'Premium incense collection for meditation and rituals',
-    image: '/api/placeholder/300/300',
-    properties: ['Meditation', 'Purification', 'Ritual'],
-  },
-  {
-    id: 14,
-    name: 'Tibetan Singing Bowl',
-    price: 'Contact for Price',
-    category: 'All Spiritual Items',
-    description: 'Handcrafted singing bowl for sound healing and meditation',
-    image: '/api/placeholder/300/300',
-    properties: ['Sound Healing', 'Meditation', 'Relaxation'],
-  },
-  {
-    id: 15,
-    name: 'Crystal Pyramid Set',
-    price: 'Contact for Price',
-    category: 'All Spiritual Items',
-    description: 'Set of 7 chakra crystal pyramids for energy work',
-    image: '/api/placeholder/300/300',
-    properties: ['Chakra Healing', 'Energy Work', 'Balance'],
-  },
-];
-
-const categories = [
-  'All',
-  'Magic Oils',
-  'Gems',
-  'Crystals',
-  'Pure Rudraksha',
-  'All Spiritual Items',
-];
+import { products, categories, ITEMS_PER_PAGE } from '@/data/products';
 
 export default function ShopPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [currentPage, setCurrentPage] = useState(1);
 
-  const filteredRemedies =
+  const filteredProducts =
     selectedCategory === 'All'
-      ? remedies
-      : remedies.filter((remedy) => remedy.category === selectedCategory);
+      ? products
+      : products.filter((product) => product.category === selectedCategory);
+
+  // Pagination logic
+  const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const endIndex = startIndex + ITEMS_PER_PAGE;
+  const currentProducts = filteredProducts.slice(startIndex, endIndex);
+
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    setCurrentPage(1); // Reset to first page when category changes
+  };
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    // Scroll to top when page changes
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="min-h-screen mystical-gradient pt-24 pb-16">
@@ -184,6 +42,10 @@ export default function ShopPage() {
             Discover authentic spiritual items, crystals, gems, and sacred oils
             to enhance your mystical journey
           </p>
+          <p className="font-serif text-lg text-white/70 mt-4">
+            {filteredProducts.length} items available
+            {selectedCategory !== 'All' && ` in ${selectedCategory}`}
+          </p>
         </div>
 
         {/* Category Filter */}
@@ -191,7 +53,7 @@ export default function ShopPage() {
           {categories.map((category) => (
             <Button
               key={category}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => handleCategoryChange(category)}
               variant={selectedCategory === category ? 'mystical' : 'outline'}
               className={`${
                 selectedCategory === category
@@ -200,6 +62,9 @@ export default function ShopPage() {
               }`}
             >
               {category}
+              <span className="ml-2 text-xs opacity-75">
+                ({category === 'All' ? products.length : products.filter(p => p.category === category).length})
+              </span>
             </Button>
           ))}
         </div>
@@ -228,28 +93,36 @@ export default function ShopPage() {
         )}
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {filteredRemedies.map((remedy) => (
-            <Card key={remedy.id} className="group hover:scale-105 transition-transform duration-300">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-12">
+          {currentProducts.map((product) => (
+            <Card key={product.id} className="group hover:scale-105 transition-transform duration-300">
               <CardHeader>
-                <div className="aspect-square bg-white/10 rounded-lg mb-4 flex items-center justify-center">
+                <div className="aspect-square bg-white/10 rounded-lg mb-4 flex items-center justify-center relative overflow-hidden">
                   <div className="text-6xl">
-                    {remedy.category === 'Magic Oils' && '🧪'}
-                    {remedy.category === 'Gems' && '💎'}
-                    {remedy.category === 'Crystals' && '🔮'}
-                    {remedy.category === 'Pure Rudraksha' && '📿'}
-                    {remedy.category === 'All Spiritual Items' && '✨'}
+                    {product.category === 'Magic Oils' && '🧪'}
+                    {product.category === 'Gems' && '💎'}
+                    {product.category === 'Crystals' && '🔮'}
+                    {product.category === 'Pure Rudraksha' && '📿'}
+                    {product.category === 'All Spiritual Items' && '✨'}
                   </div>
+                  {product.certification && (
+                    <div className="absolute top-2 right-2 bg-accent-gold text-black text-xs px-2 py-1 rounded-full">
+                      {product.certification}
+                    </div>
+                  )}
                 </div>
-                <CardTitle className="text-center">{remedy.name}</CardTitle>
+                <CardTitle className="text-center text-lg">{product.name}</CardTitle>
+                {product.origin && (
+                  <p className="text-center text-accent-gold text-sm">Origin: {product.origin}</p>
+                )}
               </CardHeader>
               <CardContent>
-                <p className="font-serif text-white/80 text-sm mb-4 text-center">
-                  {remedy.description}
+                <p className="font-serif text-white/80 text-sm mb-4 text-center line-clamp-3">
+                  {product.description}
                 </p>
                 
-                <div className="flex flex-wrap justify-center gap-2 mb-4">
-                  {remedy.properties.map((property) => (
+                <div className="flex flex-wrap justify-center gap-1 mb-4">
+                  {product.properties.slice(0, 3).map((property) => (
                     <span
                       key={property}
                       className="px-2 py-1 bg-accent-neon-glow/20 text-accent-neon-glow text-xs rounded-full"
@@ -260,18 +133,57 @@ export default function ShopPage() {
                 </div>
 
                 <div className="text-center mb-4">
-                  <span className="font-handwritten text-2xl text-accent-gold">
-                    {remedy.price}
+                  <span className="font-handwritten text-xl text-accent-gold">
+                    {product.price}
                   </span>
                 </div>
 
                 <Button className="w-full" size="sm">
-                  {remedy.price === 'Contact for Price' ? 'Inquire Now' : 'Add to Cart'}
+                  {product.price === 'Contact for Price' ? 'Inquire Now' : 'Add to Cart'}
                 </Button>
               </CardContent>
             </Card>
           ))}
         </div>
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center gap-2 mb-12">
+            <Button
+              onClick={() => handlePageChange(currentPage - 1)}
+              disabled={currentPage === 1}
+              variant="outline"
+              size="sm"
+            >
+              Previous
+            </Button>
+            
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <Button
+                key={page}
+                onClick={() => handlePageChange(page)}
+                variant={currentPage === page ? 'mystical' : 'outline'}
+                size="sm"
+                className={`${
+                  currentPage === page
+                    ? 'bg-accent-neon-glow text-black'
+                    : 'border-accent-neon-glow text-accent-neon-glow hover:bg-accent-neon-glow hover:text-black'
+                }`}
+              >
+                {page}
+              </Button>
+            ))}
+            
+            <Button
+              onClick={() => handlePageChange(currentPage + 1)}
+              disabled={currentPage === totalPages}
+              variant="outline"
+              size="sm"
+            >
+              Next
+            </Button>
+          </div>
+        )}
 
         {/* Contact Information */}
         <div className="mt-16 text-center">
