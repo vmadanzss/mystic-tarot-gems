@@ -63,7 +63,7 @@ function BookingForm() {
         preferred_datetime: formData.preferredDateTime,
         message: formData.message,
         healing_service: formData.healingService,
-        subject: 'New Booking Request - Mystic Tarot & Gems'
+        subject: 'New Inquiry - Mystic Tarot & Gems'
       };
 
       // Send email using EmailJS
@@ -102,7 +102,7 @@ function BookingForm() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="font-handwritten text-5xl md:text-6xl text-accent-gold mb-4">
-            Book Your Reading
+            Inquire Now
           </h1>
           <p className="font-serif text-xl text-white/90 max-w-2xl mx-auto mb-4">
             Connect with the mystical realm and discover what the universe has
@@ -144,7 +144,7 @@ function BookingForm() {
                     onClick={() => setIsSubmitted(false)}
                     className="mt-4"
                   >
-                    Book Another Reading
+                    Make Another Inquiry
                   </Button>
                 </div>
               ) : (
@@ -290,7 +290,7 @@ function BookingForm() {
                     size="lg"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? 'Sending...' : 'Book My Reading'}
+                    {isSubmitting ? 'Sending...' : 'Submit Inquiry'}
                   </Button>
                 </form>
               )}

@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
         preferred_datetime: body.preferred_datetime || 'N/A',
         healing_service: body.healing_service || 'N/A',
         subject: body.subject || 'N/A',
-        form_type: body.form_type || 'Booking Form',
+        form_type: body.form_type || 'Inquiry Form',
         message,
         reply_to: from_email
       }

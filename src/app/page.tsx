@@ -17,7 +17,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
             <Link href="/booking" className="mystical-button">
-              Book a Reading
+              Inquire Now
             </Link>
             <Link href="/shop" className="mystical-button">
               Shop Gems
@@ -59,7 +59,7 @@ export default function Home() {
                   Discover insights into your love, career, and life decisions through authentic tarot card readings
                 </p>
                 <div className="flex items-center text-accent-gold text-sm font-sans">
-                  <span>Book Reading</span>
+                  <span>Inquire Now</span>
                   <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>

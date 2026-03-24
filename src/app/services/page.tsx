@@ -198,7 +198,7 @@ export default function ServicesPage() {
               <div className="text-center">
                 <Link href="/booking">
                   <Button size="lg" className="text-lg px-8 py-4">
-                    Book Your Reading Now
+                    Inquire Now
                   </Button>
                 </Link>
               </div>
@@ -330,7 +330,7 @@ export default function ServicesPage() {
               has in store for you.
             </p>
             <Link href="/booking">
-              <Button size="lg">Book Your Reading Now</Button>
+              <Button size="lg">Inquire Now</Button>
             </Link>
           </CardContent>
         </Card>

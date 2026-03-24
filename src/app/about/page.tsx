@@ -354,7 +354,7 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/booking">
-                <Button size="lg">Book a Reading</Button>
+                <Button size="lg">Inquire Now</Button>
               </Link>
               <Link href="/shop">
                 <Button variant="outline" size="lg">

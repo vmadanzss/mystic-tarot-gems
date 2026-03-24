@@ -104,7 +104,7 @@ const Navigation = () => {
               href="/booking"
               className="mystical-button text-sm font-medium"
             >
-              Book Reading
+              Inquire Now
             </Link>
           </div>
 
@@ -171,7 +171,7 @@ const Navigation = () => {
                 className="mystical-button w-full text-center block"
                 onClick={() => setIsOpen(false)}
               >
-                Book Reading
+                Inquire Now
               </Link>
             </div>
           </div>
