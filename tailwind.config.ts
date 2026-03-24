@@ -9,17 +9,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Mystical color palette
+        // Mystical dark theme color palette
         primary: {
-          purple: '#4C1D95',
-          'deep-purple': '#2D1B69',
+          purple: '#7C3AED',
+          'deep-purple': '#4C1D95',
         },
         accent: {
           gold: '#F59E0B',
           'neon-glow': '#8B5CF6',
         },
         mystical: {
-          black: '#0F0F23',
+          black: '#0f0f23',
           'glass-white': 'rgba(255, 255, 255, 0.1)',
         },
         background: 'var(--background)',

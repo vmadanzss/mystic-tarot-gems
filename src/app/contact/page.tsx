@@ -182,14 +182,17 @@ export default function ContactPage() {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-accent-neon-glow focus:border-transparent"
+                      style={{
+                        colorScheme: 'dark'
+                      }}
                     >
-                      <option value="">Select a subject</option>
-                      <option value="general">General Inquiry</option>
-                      <option value="booking">Booking Support</option>
-                      <option value="technical">Technical Support</option>
-                      <option value="crystals">Crystal Information</option>
-                      <option value="partnership">Partnership Inquiry</option>
-                      <option value="feedback">Feedback</option>
+                      <option value="" style={{ backgroundColor: '#1a1a2e', color: '#ffffff' }}>Select a subject</option>
+                      <option value="general" style={{ backgroundColor: '#1a1a2e', color: '#ffffff' }}>General Inquiry</option>
+                      <option value="booking" style={{ backgroundColor: '#1a1a2e', color: '#ffffff' }}>Booking Support</option>
+                      <option value="technical" style={{ backgroundColor: '#1a1a2e', color: '#ffffff' }}>Technical Support</option>
+                      <option value="crystals" style={{ backgroundColor: '#1a1a2e', color: '#ffffff' }}>Crystal Information</option>
+                      <option value="partnership" style={{ backgroundColor: '#1a1a2e', color: '#ffffff' }}>Partnership Inquiry</option>
+                      <option value="feedback" style={{ backgroundColor: '#1a1a2e', color: '#ffffff' }}>Feedback</option>
                     </select>
                   </div>
 
@@ -286,12 +289,10 @@ export default function ContactPage() {
               <CardContent className="space-y-4">
                 <div>
                   <h3 className="font-handwritten text-lg text-accent-gold mb-2">
-                    How accurate are the readings?
+                    Are readings available both offline and online?
                   </h3>
                   <p className="font-serif text-white/70 text-sm">
-                    Our AI-enhanced readings provide insights based on tarot
-                    symbolism and patterns. While we strive for accuracy,
-                    remember that you have free will to shape your destiny.
+                    Yes, we offer both offline and online reading sessions. For online readings, we connect through Google Meet or Zoom meetings to provide the same quality experience as in-person sessions.
                   </p>
                 </div>
 

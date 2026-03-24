@@ -85,6 +85,9 @@ export default function AboutPage() {
               {/* Bio Content */}
               <div className="flex-1">
                 <p className="font-serif text-white/80 text-lg leading-relaxed mb-4">
+                  Anita Madan is a professional Tarot Reader with over 5–6 years of experience, helping individuals gain clarity in love, career, and life decisions. She holds a Diploma in Tarot Card Reading from the International School of Astrology and is also skilled in Reiki Healing, a natural energy healing method. Through Mystic Tarot & Gems, she aims to guide people toward positivity, balance, and personal growth.
+                </p>
+                <p className="font-serif text-white/80 text-lg leading-relaxed mb-4">
                   Born from a deep reverence for ancient mystical traditions and
                   powered by cutting-edge tarot techniques, Anita Madan
                   represents a new era in tarot reading and divination. Her
@@ -212,15 +215,13 @@ export default function AboutPage() {
           <CardContent>
             <div className="space-y-6">
               <div className="flex items-start gap-4">
-                <div className="text-2xl">🤖</div>
+                <div className="text-2xl">🔮</div>
                 <div>
                   <h3 className="font-handwritten text-lg text-accent-gold mb-2">
-                    AI-Enhanced Intuition
+                    Authentic Human Intuition
                   </h3>
                   <p className="font-serif text-white/70">
-                    Our proprietary AI doesn't replace human intuition—it
-                    amplifies it, analyzing patterns and energies to provide
-                    deeper, more accurate insights.
+                    Every reading is conducted personally by Anita Madan using her natural intuitive abilities and years of tarot expertise, providing genuine spiritual guidance without any artificial assistance.
                   </p>
                 </div>
               </div>

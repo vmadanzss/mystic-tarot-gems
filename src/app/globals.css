@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -24,26 +24,26 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Cinzel', serif;
   min-height: 100vh;
 }
 
-/* Mystical glassmorphism utility classes */
+/* Dark mystical theme utility classes */
 @layer components {
   .glass-card {
-    @apply bg-mystical-glass-white backdrop-blur-glass border border-white/20 rounded-2xl shadow-glass;
+    @apply bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl shadow-glass;
   }
 
   .mystical-button {
-    @apply bg-gradient-to-r from-primary-purple to-primary-deep-purple text-white font-medium px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-glow hover:scale-105;
+    @apply bg-gradient-to-r from-accent-gold to-accent-neon-glow text-mystical-black font-medium px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-glow hover:scale-105;
   }
 
   .glow-effect {
-    @apply shadow-glow animate-glow;
+    @apply shadow-glow;
   }
 
   .mystical-gradient {
-    @apply bg-gradient-to-br from-primary-purple via-primary-deep-purple to-mystical-black;
+    @apply bg-gradient-to-br from-mystical-black via-primary-deep-purple to-mystical-black;
   }
 }
 

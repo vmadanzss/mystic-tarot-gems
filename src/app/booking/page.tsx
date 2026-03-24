@@ -10,6 +10,7 @@ export default function BookingPage() {
     email: '',
     phone: '',
     readingType: '',
+    sessionType: '',
     preferredDateTime: '',
     message: ''
   });
@@ -36,6 +37,7 @@ export default function BookingPage() {
         from_email: formData.email,
         phone: formData.phone,
         reading_type: formData.readingType,
+        session_type: formData.sessionType,
         preferred_datetime: formData.preferredDateTime,
         message: formData.message,
         subject: 'New Booking Request - Mystic Tarot & Gems'
@@ -57,6 +59,7 @@ export default function BookingPage() {
           email: '',
           phone: '',
           readingType: '',
+          sessionType: '',
           preferredDateTime: '',
           message: ''
         });
@@ -77,10 +80,18 @@ export default function BookingPage() {
           <h1 className="font-handwritten text-5xl md:text-6xl text-accent-gold mb-4">
             Book Your Reading
           </h1>
-          <p className="font-serif text-xl text-white/90 max-w-2xl mx-auto">
+          <p className="font-serif text-xl text-white/90 max-w-2xl mx-auto mb-4">
             Connect with the mystical realm and discover what the universe has
             in store for you
           </p>
+          <div className="bg-accent-neon-glow/20 border border-accent-neon-glow/30 rounded-lg p-4 max-w-3xl mx-auto">
+            <p className="font-serif text-white/90 text-lg">
+              📍 <span className="text-accent-gold font-semibold">Reading Options:</span> Available both Online & Offline
+            </p>
+            <p className="font-serif text-white/80 text-sm mt-2">
+              🖥️ Online sessions via Google Meet or Zoom • 🏠 In-person sessions at our New Delhi location
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -169,12 +180,35 @@ export default function BookingPage() {
                       onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-accent-neon-glow focus:border-transparent"
+                      style={{
+                        colorScheme: 'dark'
+                      }}
                     >
-                      <option value="">Select a reading type</option>
-                      <option value="love">Love & Relationships</option>
-                      <option value="career">Career & Success</option>
-                      <option value="finance">Finance & Prosperity</option>
-                      <option value="health">Health & Wellness</option>
+                      <option value="" style={{ backgroundColor: '#1a1a2e', color: '#ffffff' }}>Select a reading type</option>
+                      <option value="love" style={{ backgroundColor: '#1a1a2e', color: '#ffffff' }}>Love & Relationships</option>
+                      <option value="career" style={{ backgroundColor: '#1a1a2e', color: '#ffffff' }}>Career & Success</option>
+                      <option value="finance" style={{ backgroundColor: '#1a1a2e', color: '#ffffff' }}>Finance & Prosperity</option>
+                      <option value="health" style={{ backgroundColor: '#1a1a2e', color: '#ffffff' }}>Health & Wellness</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block font-serif text-white/90 text-sm font-medium mb-2">
+                      Preferred Session Type *
+                    </label>
+                    <select 
+                      name="sessionType"
+                      value={formData.sessionType || ''}
+                      onChange={handleInputChange}
+                      required
+                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-accent-neon-glow focus:border-transparent"
+                      style={{
+                        colorScheme: 'dark'
+                      }}
+                    >
+                      <option value="" style={{ backgroundColor: '#1a1a2e', color: '#ffffff' }}>Select session type</option>
+                      <option value="online" style={{ backgroundColor: '#1a1a2e', color: '#ffffff' }}>Online (Google Meet/Zoom)</option>
+                      <option value="offline" style={{ backgroundColor: '#1a1a2e', color: '#ffffff' }}>Offline (In-person at New Delhi)</option>
                     </select>
                   </div>
 
