@@ -43,7 +43,7 @@ export default function ShopPage() {
               </Button>
               
               <div className="text-white/70 space-y-2">
-                <p className="font-serif">📞 Call: +91-9217673528</p>
+                <p className="font-serif">📞 Call: +91-9217673528 / +91-9871008250</p>
                 <p className="font-serif">📧 Email: vmadan6113@gmail.com</p>
               </div>
             </div>
@@ -295,13 +295,13 @@ function ShopContent() {
               </p>
               <div className="space-y-2">
                 <p className="font-serif text-white/80">
-                  📞 Call: +91-9217673528
+                  📞 Call: +91-9217673528 / +91-9871008250
                 </p>
                 <p className="font-serif text-white/80">
                   📧 Email: vmadan6113@gmail.com
                 </p>
                 <p className="font-serif text-white/80">
-                  📍 Address: C2A-106, JanakPuri, New Delhi, 110058
+                  📍 Address: Block C2A, JanakPuri, New Delhi, 110058
                 </p>
               </div>
             </CardContent>

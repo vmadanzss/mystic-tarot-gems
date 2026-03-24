@@ -166,11 +166,18 @@ const Footer = () => {
                 <span className="text-accent-gold">Phone:</span>
                 <br />
                 +91-9217673528
+                <br />
+                +91-9871008250
+              </p>
+              <p className="font-serif text-white/70">
+                <span className="text-accent-gold">Email:</span>
+                <br />
+                vmadan6113@gmail.com
               </p>
               <p className="font-serif text-white/70">
                 <span className="text-accent-gold">Address:</span>
                 <br />
-                C2A-106, JanakPuri, New Delhi, 110058
+                Block C2A, JanakPuri, New Delhi, 110058
               </p>
             </div>
           </div>

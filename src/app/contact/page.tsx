@@ -254,8 +254,22 @@ export default function ContactPage() {
                       Phone
                     </h3>
                     <p className="font-serif text-white/80">+91-9217673528</p>
+                    <p className="font-serif text-white/80">+91-9871008250</p>
                     <p className="font-serif text-white/60 text-sm">
                       Available Mon-Sat, 10 AM - 7 PM IST
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-4">
+                  <div className="text-2xl">📧</div>
+                  <div>
+                    <h3 className="font-handwritten text-lg text-accent-gold mb-1">
+                      Email
+                    </h3>
+                    <p className="font-serif text-white/80">vmadan6113@gmail.com</p>
+                    <p className="font-serif text-white/60 text-sm">
+                      We reply within 24 hours
                     </p>
                   </div>
                 </div>
@@ -267,7 +281,7 @@ export default function ContactPage() {
                       Address
                     </h3>
                     <p className="font-serif text-white/80">
-                      C2A-106, JanakPuri
+                      Block C2A, JanakPuri
                       <br />
                       New Delhi, 110058
                     </p>
